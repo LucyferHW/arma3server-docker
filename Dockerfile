@@ -86,7 +86,12 @@ COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/arma3server.network.c
 
 # copy userconfig
 RUN mkdir -p "/home/arma3server/serverfiles/userconfig"
-COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/cba_settings.sqf "/home/arma3server/serverfiles/userconfig"
+COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/cba_settings.sqf "/home/arma3server/serverfiles/userconfig/"
+
+# copy Profile
+RUN mkdir -p "/home/arma3server/.local/share/Arma 3 - Other Profiles/Player"
+COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/Player.Arma3Profile "/etc/arma3/"
+RUN mv "/etc/arma3/Player.Arma3Profile" -t '/home/arma3server/.local/share/Arma 3 - Other Profiles/Player'/
 
 # copy html todo: change html location
 COPY --chown=${USERNAME}:${USERNAME} ./config/${SERVER_NAME}/*.html ${DEFAULT_CONFIG}/
