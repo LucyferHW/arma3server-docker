@@ -1,0 +1,31 @@
+services:
+  arma3-base:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SERVER_NAME: base
+        UID: ${HOST_UID}
+        GID: ${HOST_GID}
+    image: arma3-base:latest
+    container_name: arma3-base
+    network_mode: host
+    volumes:
+      #- arma3-serverfiles:/home/arma3server/serverfiles
+      #- arma3-mods:/home/arma3server/.local/share/Steam/steamapps/workshop/content/107410
+      # - /mnt/d/tmp/missions:/home/arma3server/serverfiles/mpmissions
+      - /home/lucyfer/Arma3Docker/missions:/home/arma3server/serverfiles/mpmissions
+      #- /home/arma3server/missions:/home/arma3server/serverfiles/mpmissions
+      #- /home/arma3server/server_base/userconfig:/home/arma3server/serverfiles/userconfig
+    restart: unless-stopped
+    secrets:
+      - steam_user_password
+      - steam_user
+      - steam_password
+secrets:
+  steam_user_password:
+    file: ./secrets/secrets-common
+  steam_user:
+    file: ./secrets/steam_user
+  steam_password:
+    file: ./secrets/steam_password

@@ -1,0 +1,26 @@
+services:
+  arma3-custom:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        SERVER_NAME: custom
+        UID: ${HOST_UID}
+        GID: ${HOST_GID}
+    image: arma3-custom:latest
+    container_name: arma3-custom
+    network_mode: host
+    volumes:
+      - /home/arma3server/missions:/home/arma3server/serverfiles/mpmissions
+    restart: unless-stopped
+    secrets:
+      - steam_user_password
+      - steam_user
+      - steam_password
+secrets:
+  steam_user_password:
+    file: ./secrets/secrets-common
+  steam_user:
+    file: ./secrets/steam_user
+  steam_password:
+    file: ./secrets/steam_password
