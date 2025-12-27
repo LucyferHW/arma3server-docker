@@ -304,7 +304,7 @@ force force ace_medical_painUnconsciousThreshold = 1;
 force force ace_medical_playerDamageThreshold = 4;
 force force ace_medical_spontaneousWakeUpChance = 0.15;
 force force ace_medical_spontaneousWakeUpEpinephrineBoost = 15;
-force force ace_medical_statemachine_AIUnconsciousness = false;
+force force ace_medical_statemachine_AIUnconsciousness = true;
 force force ace_medical_statemachine_cardiacArrestBleedoutEnabled = false;
 force force ace_medical_statemachine_cardiacArrestTime = 600;
 force force ace_medical_statemachine_fatalInjuriesAI = 0;
@@ -993,3 +993,134 @@ zen_vision_enableRedGreenThermal = false;
 zen_vision_enableRedHotCold = false;
 zen_vision_enableWhiteHot = true;
 zen_vision_enableWhiteHotRedCold = false;
+
+// ACM: Airway
+force force ACM_airway_airwayCollapseChance = 0.468104;
+force force ACM_airway_airwayObstructionBloodChance = 0.487475;
+force force ACM_airway_airwayObstructionVomitChance = 0.477789;
+force force ACM_airway_allowACCUVAC = 1;
+force force ACM_airway_allowNPA = 0;
+force force ACM_airway_allowOPA = 0;
+force force ACM_airway_allowSGA = 1;
+force force ACM_airway_allowSuctionBag = 0;
+force force ACM_airway_allowSurgicalAirway = 1;
+force force ACM_airway_enable = true;
+force force ACM_airway_treatmentTimeNPA = 2;
+force force ACM_airway_treatmentTimeOPA = 2;
+force force ACM_airway_treatmentTimeRecoveryPosition = 3;
+force force ACM_airway_treatmentTimeSGA = 2;
+
+// ACM: Breathing
+force force ACM_breathing_allowInspectChest = 0;
+force force ACM_breathing_allowNCD = 1;
+force force ACM_breathing_allowThoracostomy = 1;
+force force ACM_breathing_altitudeAffectOxygen = true;
+force force ACM_breathing_chestInjuryChance = 0.138818;
+force force ACM_breathing_Hardcore_ChestInjury = false;
+force force ACM_breathing_Hardcore_HemothoraxBleeding = false;
+force force ACM_breathing_hemothoraxChance = 0.2;
+force force ACM_breathing_locationThoracostomy = 0;
+force force ACM_breathing_pneumothoraxDeteriorateChance = 0.526214;
+force force ACM_breathing_pneumothoraxEnabled = true;
+force force ACM_breathing_showCyanosisSeverity = true;
+force force ACM_breathing_treatmentTimeInspectChest = 1;
+
+// ACM: CBRN
+force force ACM_cbrn_allowATNAAutoinjector = 0;
+force force ACM_cbrn_allowMidazolamAutoinjector = 0;
+force force ACM_cbrn_chemicalAffectAI = true;
+force force ACM_cbrn_chemicalAffectAISkill = true;
+force force ACM_cbrn_chlorineCauseBlindness = true;
+force force ACM_cbrn_CSCauseBlindness = true;
+force force ACM_cbrn_customPPEList_gasmask = "";
+force force ACM_cbrn_customPPEList_suit = "";
+force force ACM_cbrn_customVehicleList_CBRN = "";
+force force ACM_cbrn_customVehicleList_sealed = "";
+force force ACM_cbrn_enable = false;
+force force ACM_cbrn_lewisiteCauseBlindness = true;
+force force ACM_cbrn_lewisiteIsColorless = true;
+force force ACM_cbrn_sarinIsColorless = true;
+
+// ACM: Circulation
+force force ACM_circulation_AEDDistanceLimit = 5;
+force force ACM_circulation_allowAED = 0;
+force force ACM_circulation_allowAmmoniaInhalant = 1;
+force force ACM_circulation_allowFentanylLozenge = 1;
+force force ACM_circulation_allowIO = 1;
+force force ACM_circulation_allowIV = 1;
+force force ACM_circulation_allowSyringe = 1;
+force force ACM_circulation_BloodType_Ratio_A = 28;
+force force ACM_circulation_BloodType_Ratio_AB = 4;
+force force ACM_circulation_BloodType_Ratio_ABN = 1;
+force force ACM_circulation_BloodType_Ratio_AN = 3;
+force force ACM_circulation_BloodType_Ratio_B = 18;
+force force ACM_circulation_BloodType_Ratio_BN = 2;
+force force ACM_circulation_BloodType_Ratio_O = 39;
+force force ACM_circulation_BloodType_Ratio_ON = 5;
+force force ACM_circulation_cardiacArrestBleedRate = 0.01;
+force force ACM_circulation_cardiacArrestChance = 0.1;
+force force ACM_circulation_cardiacArrestDeteriorationRate = 1.70777;
+force force ACM_circulation_coagulationClotting = true;
+force force ACM_circulation_coagulationClottingAffectAI = false;
+force force ACM_circulation_CPREffectiveness = 1;
+force force ACM_circulation_customBloodTypeList_enable = false;
+force force ACM_circulation_Hardcore_PostCardiacArrest = false;
+force force ACM_circulation_IVComplications = false;
+force force ACM_circulation_IVComplicationsDeteriorate = false;
+force force ACM_circulation_reusableSyringe = true;
+force force ACM_circulation_selfIO = 0;
+force force ACM_circulation_selfIV = 1;
+force force ACM_circulation_treatmentTimeIO_EZ = 2;
+force force ACM_circulation_treatmentTimeIO_FAST1 = 2;
+force force ACM_circulation_treatmentTimeIV_14 = 2;
+force force ACM_circulation_treatmentTimeIV_16 = 2.02983;
+
+// ACM: Core
+force force ACM_core_allowWrap = 0;
+force force ACM_core_Dogtag_ShowWeight = true;
+force force ACM_core_ignoreIncompatibleAddonWarning = false;
+force force ACM_core_MedicAI_AllowIntermediateTreatment = true;
+force force ACM_core_treatmentTimeSutureStitch = 0.5;
+force force ACM_core_treatmentTimeTakeOffTourniquet = 2;
+force force ACM_core_treatmentTimeWrappedStitch = 2;
+
+// ACM: Damage
+force force ACM_damage_AIStayDownChance = 1;
+force force ACM_damage_bodyTraumaCardiacArrestThreshold = 11;
+force force ACM_damage_bodyTraumaCardiacArrestThresholdAI = 1;
+force force ACM_damage_bodyTraumaDeathThreshold = 12;
+force force ACM_damage_bodyTraumaDeathThresholdAI = 4;
+force force ACM_damage_enable = true;
+force force ACM_damage_headTraumaCardiacArrestThreshold = 8;
+force force ACM_damage_headTraumaCardiacArrestThresholdAI = 1;
+force force ACM_damage_headTraumaDeathThreshold = 9;
+force force ACM_damage_headTraumaDeathThresholdAI = 1;
+force force ACM_damage_internalBleedingChanceMultiplier = 0.507896;
+
+// ACM: Disability
+force force ACM_disability_allowFractureRealignment = 1;
+force force ACM_disability_allowInspectForFracture = 0;
+force force ACM_disability_enableFractureSeverity = true;
+force force ACM_disability_Hardcore_ComplexFracture = false;
+force force ACM_disability_splintFallOffTime = 60;
+force force ACM_disability_tourniquetImpactLimbs = true;
+force force ACM_disability_treatmentTimeSAMSplint = 2;
+force force ACM_disability_treatmentTimeWrapSplint = 5;
+
+// ACM: Evacuation
+force force ACM_evacuation_allowConvert = 2;
+force force ACM_evacuation_clearCasualtyLoadout = false;
+force force ACM_evacuation_convertedCasualtyDeathPenalty = 1;
+force force ACM_evacuation_enable = true;
+force force ACM_evacuation_locationConvert = 0;
+force force ACM_evacuation_requireAntibiotics = true;
+force force ACM_evacuation_ticketCountCasualty = 5;
+force force ACM_evacuation_ticketCountRespawn = 20;
+
+// ACM: GUI
+force force ACM_gui_overlayBodyPart = true;
+force force ACM_gui_showActionItemIcons = true;
+force force ACM_gui_showExactPainAmount = true;
+force force ACM_gui_showFracture = true;
+force force ACM_gui_showInactiveStatuses = true;
+force force ACM_gui_showPatientSideLabels = true;
