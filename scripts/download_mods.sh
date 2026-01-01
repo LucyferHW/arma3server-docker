@@ -22,3 +22,4 @@ echo "Starte Download von ${#mods[@]} Mod(s) in einem Rutsch..."
 "${cmd[@]}"
 
 echo "Download complete!"
+echo ""

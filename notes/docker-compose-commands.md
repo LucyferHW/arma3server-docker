@@ -10,6 +10,8 @@ docker compose build       # baut nur die Images, startet nichts
 docker compose push        # (nach build) pusht in Registry
 
 docker compose down -v     # löscht auch named volumes
+
+docker exec -it arma3-mods "bash"
 ```
 
 ## My Docker Compose Commands

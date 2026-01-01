@@ -10,3 +10,8 @@
     
     git submodule update --remote
 ```
+
+## Best
+```Bash
+    git pull --recurse-submodules
+```
