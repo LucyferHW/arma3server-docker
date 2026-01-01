@@ -60,7 +60,7 @@ ARG SCRIPT="/etc/arma3/scripts"
 ARG DEFAULT_CONFIG="/etc/arma3/default-config"
 ARG LGSM_CONFIG="/home/arma3server/lgsm/config-lgsm/arma3server"
 ARG SERVER_CONFIG="/home/arma3server/serverfiles/cfg"
-ARG MODPACK_NAME="./arma3server-html/GTO_Base_Base.html"
+ARG MODPACK_PATH="./arma3server-html/GTO_Base_Base.html"
 
 #copy firstrun file
 COPY --chown=${USERNAME}:${USERNAME} scripts/.firstrun ${SCRIPT}/
@@ -95,7 +95,7 @@ COPY --chown=${USERNAME}:${USERNAME} arma3server-config/${SERVER_NAME}/Player.Ar
 RUN mv "/etc/arma3/Player.Arma3Profile" -t '/home/arma3server/.local/share/Arma 3 - Other Profiles/Player'/
 
 # copy html
-COPY --chown=${USERNAME}:${USERNAME} ./arma3server-html/${MODPACK_NAME} ${DEFAULT_CONFIG}/
+COPY --chown=${USERNAME}:${USERNAME} ./arma3server-html/${MODPACK_PATH} ${DEFAULT_CONFIG}/
 RUN sh -c 'echo "**** HTML Check ****"; ls /etc/arma3/default-config/*.html >/dev/null 2>&1 || { echo "FEHLER: Keine HTML-Datei in /app/config gefunden" >&2; exit 1; }'
 
 # create mpmission directorie

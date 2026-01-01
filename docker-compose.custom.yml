@@ -7,7 +7,7 @@ services:
         SERVER_NAME: custom
         UID: ${HOST_UID}
         GID: ${HOST_GID}
-        MODPACK_NAME: "GTO_GreenBerets_01_Base.html"
+        MODPACK_PATH: "GreenBerets/GTO_GreenBerets_01_Base.html"
     image: arma3-custom:latest
     container_name: arma3-custom
     network_mode: host
