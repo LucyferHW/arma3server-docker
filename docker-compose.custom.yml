@@ -13,7 +13,7 @@ services:
     network_mode: host
     volumes:
       - /home/arma3server/missions:/home/arma3server/serverfiles/mpmissions
-#      - /home/arma3server/.local/share/Steam/steamapps/workshop/content/107410:/home/arma3server/.local/share/Steam/steamapps/workshop/content/107410
+      - /home/arma3server/.local/share/Steam/steamapps/workshop/content/107410:/home/arma3server/.local/share/Steam/steamapps/workshop/content/107410
     restart: unless-stopped
     secrets:
       - steam_user_password
