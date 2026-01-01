@@ -7,11 +7,13 @@ services:
         SERVER_NAME: custom
         UID: ${HOST_UID}
         GID: ${HOST_GID}
+        MODPACK_NAME: "GTO_GreenBerets_01_Base.html"
     image: arma3-custom:latest
     container_name: arma3-custom
     network_mode: host
     volumes:
       - /home/arma3server/missions:/home/arma3server/serverfiles/mpmissions
+#      - /home/arma3server/.local/share/Steam/steamapps/workshop/content/107410:/home/arma3server/.local/share/Steam/steamapps/workshop/content/107410
     restart: unless-stopped
     secrets:
       - steam_user_password

@@ -48,6 +48,7 @@ fi
     cleanup() {
         echo "SIGTERM/SIGINT erhalten → stoppe Arma 3 Server..."
         ./arma3server stop || true
+        sleep 30
         exit 0
     }
     trap cleanup SIGTERM SIGINT
