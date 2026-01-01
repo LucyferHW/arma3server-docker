@@ -60,7 +60,7 @@ ARG SCRIPT="/etc/arma3/scripts"
 ARG DEFAULT_CONFIG="/etc/arma3/default-config"
 ARG LGSM_CONFIG="/home/arma3server/lgsm/config-lgsm/arma3server"
 ARG SERVER_CONFIG="/home/arma3server/serverfiles/cfg"
-ARG MODPACK_NAME="./html/GTO_Base_Base.html"
+ARG MODPACK_NAME="./arma3server-html/GTO_Base_Base.html"
 
 #copy firstrun file
 COPY --chown=${USERNAME}:${USERNAME} scripts/.firstrun ${SCRIPT}/
@@ -76,26 +76,26 @@ RUN curl -Lo linuxgsm.sh https://linuxgsm.sh && \
 
 # copy lgsm-configs
 RUN mkdir -p ${LGSM_CONFIG}
-COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/common.cfg ${LGSM_CONFIG}
-COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/secrets-common.cfg ${LGSM_CONFIG}
-COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/secrets-arma3server.cfg ${LGSM_CONFIG}
+COPY --chown=${USERNAME}:${USERNAME} arma3server-config/${SERVER_NAME}/common.cfg ${LGSM_CONFIG}
+COPY --chown=${USERNAME}:${USERNAME} arma3server-config/${SERVER_NAME}/secrets-common.cfg ${LGSM_CONFIG}
+COPY --chown=${USERNAME}:${USERNAME} arma3server-config/${SERVER_NAME}/secrets-arma3server.cfg ${LGSM_CONFIG}
 
 # copy server-configs
 RUN mkdir -p ${SERVER_CONFIG}
-COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/arma3server.server.cfg ${SERVER_CONFIG}
-COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/arma3server.network.cfg ${SERVER_CONFIG}
+COPY --chown=${USERNAME}:${USERNAME} arma3server-config/${SERVER_NAME}/arma3server.server.cfg ${SERVER_CONFIG}
+COPY --chown=${USERNAME}:${USERNAME} arma3server-config/${SERVER_NAME}/arma3server.network.cfg ${SERVER_CONFIG}
 
 # copy userconfig
 RUN mkdir -p "/home/arma3server/serverfiles/userconfig"
-COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/cba_settings.sqf "/home/arma3server/serverfiles/userconfig/"
+COPY --chown=${USERNAME}:${USERNAME} arma3server-config/${SERVER_NAME}/cba_settings.sqf "/home/arma3server/serverfiles/userconfig/"
 
 # copy Profile
 RUN mkdir -p "/home/arma3server/.local/share/Arma 3 - Other Profiles/Player"
-COPY --chown=${USERNAME}:${USERNAME} config/${SERVER_NAME}/Player.Arma3Profile "/etc/arma3/"
+COPY --chown=${USERNAME}:${USERNAME} arma3server-config/${SERVER_NAME}/Player.Arma3Profile "/etc/arma3/"
 RUN mv "/etc/arma3/Player.Arma3Profile" -t '/home/arma3server/.local/share/Arma 3 - Other Profiles/Player'/
 
 # copy html
-COPY --chown=${USERNAME}:${USERNAME} ./html/${MODPACK_NAME} ${DEFAULT_CONFIG}/
+COPY --chown=${USERNAME}:${USERNAME} ./arma3server-html/${MODPACK_NAME} ${DEFAULT_CONFIG}/
 RUN sh -c 'echo "**** HTML Check ****"; ls /etc/arma3/default-config/*.html >/dev/null 2>&1 || { echo "FEHLER: Keine HTML-Datei in /app/config gefunden" >&2; exit 1; }'
 
 # create mpmission directorie
