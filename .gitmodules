@@ -1,0 +1,3 @@
+[submodule "arma3server-config"]
+	path = arma3server-config
+	url = https://github.com/German-Tactical-Ops/arma3server-config.git
