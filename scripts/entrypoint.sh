@@ -27,8 +27,8 @@ if [ -f "$FIRST_RUN_MARKER" ]; then
     # setup and download mods
     bash ${SCRIPTS}/create_sublist.sh "${HTML_PATH}" "${MOD_LIST}"
     bash ${SCRIPTS}/set_modlist.sh "${HTML_PATH}" "${LGSM_CONFIG}/secrets-arma3server.cfg"
-    bash ${SCRIPTS}/download_mods.sh "/home/steam/steamcmd/steamcmd.sh" "${MOD_LIST}" "${STEAMUSER}" "${STEAMPASS}"
-    bash ${SCRIPTS}/fix_mods_lowercase.sh ${MOD_DIRECTORY}
+    #bash ${SCRIPTS}/download_mods.sh "/home/steam/steamcmd/steamcmd.sh" "${MOD_LIST}" "${STEAMUSER}" "${STEAMPASS}"
+    #bash ${SCRIPTS}/fix_mods_lowercase.sh ${MOD_DIRECTORY}
 
     # link mods dir to serverfiles (for shorter paths)
     mkdir -p "/home/arma3server/serverfiles"
